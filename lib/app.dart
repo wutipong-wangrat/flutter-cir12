@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app12/row_column_demo.dart';
+import 'package:flutter_app12/pages/grid_view_demo.dart';
+import 'package:flutter_app12/pages/row_column_demo.dart';
 
 class Myapp extends StatelessWidget{
   const Myapp({Key?key}):super(key: key);
@@ -8,7 +9,7 @@ class Myapp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       title: 'Flutter App',
-      home: RowColumnDemo(),
+      home: GridViewDemo(),
     );
   }
 }

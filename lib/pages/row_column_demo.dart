@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app12/pages/my_card.dart';
 
 class RowColumnDemo extends StatelessWidget {
   const RowColumnDemo({
@@ -8,60 +9,59 @@ class RowColumnDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter App'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Container(
-          height: 100,
-          color: Colors.grey,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.account_balance,color: Colors.white),
-                  SizedBox(height: 6,),
-                  Text('Cats',style: TextStyle(color: Colors.white),),
-                  Text('Version Korat',style: TextStyle(color: Colors.white),),
-                ],
-              ),
-              SizedBox(width: 12,),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.alarm,color: Colors.white),
-                  SizedBox(height: 6,),
-                  Text('Flutter',style: TextStyle(color: Colors.white),),
-                  Text('Version 2.0',style: TextStyle(color: Colors.white),),
-                ],
-              ),
-              SizedBox(width: 12,),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.accessibility,color: Colors.white),
-                  SizedBox(height: 6,),
-                  Text('React N',style: TextStyle(color: Colors.white),),
-                  Text('Version 5.0',style: TextStyle(color: Colors.white),),
-                ],
-              ),
-              SizedBox(width: 12,),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.remove_done,color: Colors.white),
-                  SizedBox(height: 6,),
-                  Text('React N',style: TextStyle(color: Colors.white),),
-                  Text('Version 5.0',style: TextStyle(color: Colors.white),),
-                ],
-              ),
-            ],
+      // appBar: AppBar(
+      //   title: Text('Flutter App'),
+      //   centerTitle: true,
+      // ),
+      backgroundColor: Colors.grey,
+      body: Column(
+        children: [
+          Container(
+            height: 100,
+            color: Colors.blue,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                MyCard(
+                  title: 'Flutter',
+                  subTitle: 'Version 2.0',
+                  icon: Icons.home,
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                MyCard(
+                  title: 'Flutter',
+                  subTitle: 'Version 2.0',
+                  icon: Icons.alarm,
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                MyCard(
+                  title: 'React N',
+                  subTitle: 'Version 5.0',
+                  icon: Icons.accessibility,
+                ),
+                SizedBox(
+                  width: 12,
+                ),
+                MyCard(
+                  title: 'React N',
+                  subTitle: 'Version 5.0',
+                  icon: Icons.remove_done,
+                ),
+              ],
+            ),
           ),
-        ),
+          Icon(Icons.ac_unit),
+          Expanded(
+              child: Container(
+                color: Colors.orange,
+              )
+          ),
+        ],
       ),
     );
   }
